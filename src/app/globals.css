@@ -25,3 +25,24 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+.icon-logo::before{
+    content: "";
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    display: block;
+    background-color: transparent;
+    border: 3px solid #0de3cd;
+    border-radius: 2px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    left: -7px;
+    z-index: -1;
+}
+
+.bg-main{
+  background-color: #00cdb8;
+}
+.active{
+  background-color: #000;
+}

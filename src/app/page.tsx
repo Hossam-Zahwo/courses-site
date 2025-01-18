@@ -1,10 +1,10 @@
 import React from "react";
+import Header from "../Components/Header";
 
 const Home: React.FC = () => {
   return (
     <div>
-      <h1>مرحبًا بك في موقع الكورسات</h1>
-      <p>استعرض أحدث الكورسات لدينا!</p>
+      <Header />
     </div>
   );
 };
