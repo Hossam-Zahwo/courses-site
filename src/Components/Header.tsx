@@ -4,24 +4,25 @@ import { useState } from "react";
 export default function Header() {
   const [showIcon, setShowIcon] = useState<boolean>(false);
 
-  const bgWhiteOpacity: React.CSSProperties = {
-    backgroundColor: "#ffffff66",
-  };
-
   const handelShow = () => {
     setShowIcon(!showIcon);
   };
 
+  // pl-[40px] pr-[40px] pt-[18px] pb-[18px] max-[991px]:pl-[20px] max-[991px]:pr-[20px]
+
+  // custome-container
   return (
     <header
-      className="flex relative bg-main items-center text-white max-[991px]:justify-between
-        pl-[40px] pr-[40px] pt-[18px] pb-[18px] max-[991px]:pl-[20px] max-[991px]:pr-[20px]"
+      className="relative bg-main text-white pt-[18px] pb-[18px]"
     >
-      <h1 className="text-[20px] uppercase font-bold relative icon-logo z-10">Totc</h1>
+      <div className="custome-container">
+        <div className="flex relative items-center max-[991px]:justify-between">
+        <h1 className="text-[20px] uppercase font-bold relative icon-logo z-10 max-[991px]:ml-[15px]">Totc</h1>
       <nav
-        className={`justify-between items-center ml-auto gap-[1.5rem] min-[991px]:flex ${
+        className={`justify-between items-center ml-auto z-50 gap-[1.5rem] flex 
+          ${
           showIcon
-            ? `max-[991px]:absolute max-[991px]:top-[50px] bg-main max-[991px]:w-full max-[991px]:left-0 max-[991px]:flex-col max-[991px]:flex max-[991px]:pt-[25px] 
+            ? `max-[991px]:absolute max-[991px]:top-[49px] bg-main max-[991px]:w-full max-[991px]:left-0 max-[991px]:flex-col max-[991px]:flex max-[991px]:pt-[25px] max-[991px]:shadow 
                 max-[991px]:pr-[15px] max-[991px]:pb-[15px] max-[991px]:pl-[15px]`
             : `max-[991px]:hidden`
         }`}
@@ -82,8 +83,7 @@ export default function Header() {
             Login
           </button>
           <button
-            className="pt-[10px] pr-[15px] pb-[10px] pl-[15px] w-[120px] max-[991px]:w-full text-white font-semibold rounded-[20px] shadow"
-            style={bgWhiteOpacity}
+            className="pt-[10px] pr-[15px] pb-[10px] pl-[15px] w-[120px] max-[991px]:w-full text-white font-semibold rounded-[20px] shadow bg-opacity-main"
           >
             Sign Up
           </button>
@@ -108,6 +108,8 @@ export default function Header() {
               : "absolute w-[45%] h-[3px] right-0 top-[16px] bg-white transition-all rounded-[2px]"
           }
         ></span>
+      </div>
+        </div>
       </div>
     </header>
   );

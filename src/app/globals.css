@@ -43,6 +43,71 @@ body {
 .bg-main{
   background-color: #00cdb8;
 }
+
+
+
+.color-main{
+  color: #00cdb8;
+}
 .active{
   background-color: #000;
+}
+
+.custome-media{
+  @apply pl-[25px] pr-[25px]
+}
+
+
+.custome-container{
+  @apply pl-[15px] pr-[15px] ml-auto mr-auto
+}
+/* Small */
+@media (min-width: 768px){
+  .custome-container{
+      @apply w-[750px]
+  }
+}
+/* Medium */
+@media (min-width: 992px){
+  .custome-container{
+      @apply w-[970px]
+  }
+}
+/* large */
+@media (min-width: 1200px){
+  .custome-container{
+      @apply w-[1170px]
+  }
+}
+
+.bg-opacity-main{
+  background-color: #ffffff66;
+}
+
+.custome-rounded{
+  border-bottom-left-radius: 50% 53%;
+  border-bottom-right-radius: 50% 53%;
+}
+.translate-media{
+  @media (max-width: 991px){
+    &{
+      transform: translateX(-57%);
+    }
+  }
+}
+
+.negativ-left{
+  left: -165px
+}
+.negative-bottom{
+  bottom: -6px;
+}
+.negativ-left-icon{
+  left: -90px
+}
+.negativ-right{
+  right: -38px
+}
+.bg-filter{
+  background-color: #f8fafc9c;
 }
