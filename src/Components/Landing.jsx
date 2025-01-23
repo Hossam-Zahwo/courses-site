@@ -105,11 +105,11 @@ export default function Landing(){
 
 
         {/************************ */}
-        <div className="flex w-full flex-col justify-center items-center bg-black">
-        <h1 className="w-[478px] h-[65px] text-3xl font-bold text-[#2F327D] mb-4">
+        <div className="flex w-full flex-col justify-center items-center bg-black m-5">
+        <h1 className="w-[478px] h-[65px] text-3xl text-center font-bold text-[#2F327D] mb-4">
           Latest News and Resources
         </h1>
-        <p className="w-[676px] text-gray-500 mb-8">
+        <p className="w-[676px] text-gray-500 mb-8 text-center">
           See the developments that have occurred to TOTC in the world
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 p-5">
