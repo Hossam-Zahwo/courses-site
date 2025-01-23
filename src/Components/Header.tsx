@@ -8,18 +8,15 @@ export default function Header() {
     setShowIcon(!showIcon);
   };
 
-  // pl-[40px] pr-[40px] pt-[18px] pb-[18px] max-[991px]:pl-[20px] max-[991px]:pr-[20px]
-
-  // custome-container
   return (
     <header
-      className="relative bg-main text-white pt-[18px] pb-[18px]"
+      className="relative bg-main text-white bg-[#00cdb8] pt-[18px] pb-[18px]"
     >
       <div className="custome-container">
         <div className="flex relative items-center max-[991px]:justify-between">
         <h1 className="text-[20px] uppercase font-bold relative icon-logo z-10 max-[991px]:ml-[15px]">Totc</h1>
       <nav
-        className={`justify-between items-center ml-auto z-50 gap-[1.5rem] flex 
+        className={`justify-between items-center bg-white md:bg-transparent ml-auto z-50 gap-[1.5rem] flex 
           ${
           showIcon
             ? `max-[991px]:absolute max-[991px]:top-[49px] bg-main max-[991px]:w-full max-[991px]:left-0 max-[991px]:flex-col max-[991px]:flex max-[991px]:pt-[25px] max-[991px]:shadow 
@@ -28,7 +25,7 @@ export default function Header() {
         }`}
       >
         <ul
-          className={`gap-[.3rem] flex ${
+          className={`gap-[.3rem] bg-[#00cdb8] md:bg-transparent flex ${
             showIcon ? "w-full max-[991px]:flex-col" : "min-[991px]:flex-row w-auto"
           }`}
         >
@@ -83,7 +80,7 @@ export default function Header() {
             Login
           </button>
           <button
-            className="pt-[10px] pr-[15px] pb-[10px] pl-[15px] w-[120px] max-[991px]:w-full text-white font-semibold rounded-[20px] shadow bg-opacity-main"
+            className="pt-[10px] bg-[#00cdb8] pr-[15px] pb-[10px] pl-[15px] w-[120px] max-[991px]:w-full text-black mf:text-white font-semibold rounded-[20px] shadow bg-opacity-main"
           >
             Sign Up
           </button>

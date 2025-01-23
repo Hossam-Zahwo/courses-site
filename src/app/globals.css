@@ -3,111 +3,111 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 0, 0, 0; /* الخط أسود */
+  --background-start-rgb: 255, 255, 255; /* الخلفية بيضاء */
+  --background-end-rgb: 255, 255, 255; /* الخلفية بيضاء */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 0, 0, 0; /* الخط أسود حتى في الوضع الداكن */
+    --background-start-rgb: 255, 255, 255; /* الخلفية بيضاء حتى في الوضع الداكن */
+    --background-end-rgb: 255, 255, 255; /* الخلفية بيضاء حتى في الوضع الداكن */
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-.icon-logo::before{
-    content: "";
-    position: absolute;
-    width: 38px;
-    height: 38px;
-    display: block;
-    background-color: transparent;
-    border: 3px solid #0de3cd;
-    border-radius: 2px;
-    top: 50%;
-    transform: translateY(-50%) rotate(45deg);
-    left: -7px;
-    z-index: -1;
+  color: rgb(var(--foreground-rgb)); /* لون الخط أسود */
+  background: rgb(var(--background-start-rgb)); /* خلفية بيضاء */
 }
 
-.bg-main{
-  background-color: #00cdb8;
+.icon-logo::before {
+  content: "";
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  display: block;
+  background-color: transparent;
+  border: 3px solid #0de3cd;
+  border-radius: 2px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  left: -7px;
+  z-index: -1;
 }
 
 
 
-.color-main{
+.color-main {
   color: #00cdb8;
 }
-.active{
+
+.active {
   background-color: #000;
 }
 
-.custome-media{
-  @apply pl-[25px] pr-[25px]
+.custome-media {
+  @apply pl-[25px] pr-[25px];
 }
 
-
-.custome-container{
-  @apply pl-[15px] pr-[15px] ml-auto mr-auto
+.custome-container {
+  @apply pl-[15px] pr-[15px] ml-auto mr-auto;
 }
+
 /* Small */
-@media (min-width: 768px){
-  .custome-container{
-      @apply w-[750px]
-  }
-}
-/* Medium */
-@media (min-width: 992px){
-  .custome-container{
-      @apply w-[970px]
-  }
-}
-/* large */
-@media (min-width: 1200px){
-  .custome-container{
-      @apply w-[1170px]
+@media (min-width: 768px) {
+  .custome-container {
+    @apply w-[750px];
   }
 }
 
-.bg-opacity-main{
+/* Medium */
+@media (min-width: 992px) {
+  .custome-container {
+    @apply w-[970px];
+  }
+}
+
+/* large */
+@media (min-width: 1200px) {
+  .custome-container {
+    @apply w-[1170px];
+  }
+}
+
+.bg-opacity-main {
   background-color: #ffffff66;
 }
 
-.custome-rounded{
+.custome-rounded {
   border-bottom-left-radius: 50% 53%;
   border-bottom-right-radius: 50% 53%;
 }
-.translate-media{
-  @media (max-width: 991px){
-    &{
+
+.translate-media {
+  @media (max-width: 991px) {
+    & {
       transform: translateX(-57%);
     }
   }
 }
 
-.negativ-left{
-  left: -165px
+.negativ-left {
+  left: -165px;
 }
-.negative-bottom{
+
+.negative-bottom {
   bottom: -6px;
 }
-.negativ-left-icon{
-  left: -90px
+
+.negativ-left-icon {
+  left: -90px;
 }
-.negativ-right{
-  right: -38px
+
+.negativ-right {
+  right: -38px;
 }
-.bg-filter{
+
+.bg-filter {
   background-color: #f8fafc9c;
 }
