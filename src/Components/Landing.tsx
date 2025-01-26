@@ -1,11 +1,20 @@
 "use client";
-import { FaPlay, FaAlignLeft } from 'react-icons/fa';
-import Image from 'next/image';
-import { MdDateRange, MdEmail } from 'react-icons/md';
-import React, { useState } from "react";
 
-// Card data for the news section
-const cardData = [
+import { FaPlay, FaAlignLeft } from "react-icons/fa";
+import Image from "next/image";
+import { MdDateRange, MdEmail } from "react-icons/md";
+import React, { useState } from "react";
+import OurSucc from "./ourSucc";
+
+
+type CardData = {
+  title: string;
+  description: string;
+  imageUrl: string;
+};
+
+
+const cardData: CardData[] = [
   {
     title: "Class adds $30 million to its balance sheet for a Zoom-friendly edtech solution",
     description:
@@ -16,7 +25,7 @@ const cardData = [
     title: "Can coffee make you a better developer?",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.",
-    imageUrl: "/24978c219bf2223fc9e32ec5fae8375f.png"
+    imageUrl: "/24978c219bf2223fc9e32ec5fae8375f.png",
   },
   {
     title: "The future of AI in education",
@@ -26,10 +35,10 @@ const cardData = [
   },
 ];
 
-export default function Landing() {
-  const [isReadMore, setIsReadMore] = useState(false);
+const Landing: React.FC = () => {
+  const [isReadMore, setIsReadMore] = useState<boolean>(false);
 
-  const toggleReadMore = () => {
+  const toggleReadMore = (): void => {
     setIsReadMore(!isReadMore);
   };
 
@@ -37,7 +46,7 @@ export default function Landing() {
     <>
       {/* Hero Section */}
       <div className="relative w-full overflow-hidden">
-        <div className="relative pt-[50px] custome-media bg-[#00cdb8] text-white bg-main flex-col max-[991px]:flex-col gap-10 justify-between items-center  px-5 h-[450px] max-[870px]:h-[90vh] max-[768px]:h-[99vh] -z-10 custome-rounded w-full">
+        <div className="relative pt-[50px] bg-[#00cdb8] text-white bg-main flex-col max-[991px]:flex-col gap-10 justify-between items-center overflow-hidden px-5 h-[650px] md:h-[680px] sm:h-[680px] custome-rounded z-10 w-full">
           {/* Left Section */}
           <div className="w-[50%] max-[991px]:w-full absolute top-[125px] max-[1025px]:top-[50px] max-[1000px]:top-[35px] max-[991px]:static">
             <h1 className="mb-[10px] text-[35px] text-white">
@@ -62,7 +71,7 @@ export default function Landing() {
           </div>
 
           {/* Right Section (Image and Overlays) */}
-          <div className="landing-image absolute flex justify-center items-center negative-bottom right-[100px] bottom-60 w-full max-w-[400px] z-10 max-[991px]:right-auto max-[991px]:left-[50%] translate-media max-[991px]:w-[300px] max-[991px]:bottom-0">
+          <div className="landing-image absolute flex justify-center items-center negative-bottom right-[200px] bottom-60 w-full max-w-[400px] z-10 md:right-auto md:left-[50%] translate-media md:w-[300px] md:bottom-0 sm:right-auto sm:left-[50%] sm:w-[300px] sm:bottom-0">
             {/* Main Image */}
             <Image
               src="/landing-img.png"
@@ -73,7 +82,7 @@ export default function Landing() {
             />
 
             {/* Overlay 1: Message */}
-            <div className="max-[768px]:hidden absolute w-[260px] p-[13px] backdrop-blur-[4px] rounded-[8px] top-[50%]  negativ-left bg-filter">
+            <div className="max-[768px]:hidden absolute w-[260px] p-[13px] backdrop-blur-[4px] rounded-[8px] top-[50%] negativ-left bg-[#f8fafc9c]">
               <p className="flex items-center gap-[0.5rem] mb-[7px]">
                 <Image
                   src="/message-img.jpeg"
@@ -93,7 +102,7 @@ export default function Landing() {
             </div>
 
             {/* Overlay 2: Assisted Students */}
-            <div className="absolute flex max-[768px]:hidden items-center gap-[0.5rem] bg-filter top-[55px] text-black p-[10px] rounded-[10px] text-[15px] negativ-left-icon">
+            <div className="absolute flex max-[768px]:hidden items-center gap-[0.5rem] bg-[#f8fafc9c] top-[55px] text-black p-[10px] rounded-[10px] text-[15px] negativ-left-icon">
               <MdDateRange className="text-[30px] bg-blue-400 text-white p-[6px] rounded-[4px]" />
               <div>
                 <span className="font-semibold text-[17px] block">250K</span>
@@ -102,7 +111,7 @@ export default function Landing() {
             </div>
 
             {/* Overlay 3: Congratulations */}
-            <div className="absolute flex max-[768px]:hidden items-center gap-[0.5rem] bg-filter top-[50%] text-black p-[10px] rounded-[10px] negativ-right">
+            <div className="absolute flex max-[768px]:hidden items-center gap-[0.5rem] bg-[#f8fafc9c] top-[50%] text-black p-[10px] rounded-[10px] negativ-right">
               <MdEmail className="text-[30px] text-white bg-orange-400 p-[6px] rounded-[4px]" />
               <div>
                 <span className="font-semibold text-[17px] block">Congratulations</span>
@@ -117,6 +126,8 @@ export default function Landing() {
           </div>
         </div>
 
+        {/* our Succ Section */}
+        <OurSucc />
         {/* News Section */}
         <div className="flex w-full flex-col justify-center items-center  p-5">
           <h1 className="w-full max-w-[478px] text-3xl text-center font-bold text-[#2F327D] mb-4">
@@ -169,14 +180,23 @@ export default function Landing() {
                     className="w-full h-[200px] p-1 bg-white shadow-lg rounded-lg flex"
                   >
                     {/* Card Image */}
-                    <div
-                      className="w-[450px] h-full bg-cover bg-center rounded-lg"
-                      style={{ backgroundImage: `url(${card.imageUrl})` }}
-                    ></div>
+                    <div className="w-[40%] h-full">
+                      <Image
+                        className="w-full h-full rounded-l-lg object-cover"
+                        src={card.imageUrl}
+                        alt={card.title}
+                        width={200}
+                        height={200}
+                      />
+                    </div>
 
                     {/* Card Content */}
-                    <div className="flex flex-col justify-center px-4 py-2 w-full">
-                      <h2 className="text-[#2F327D] text-xl font-semibold">{card.title}</h2>
+                    <div className="w-[60%] h-full p-3 flex flex-col justify-between">
+                      <p className="text-[#2F327D] text-lg font-bold">{card.title}</p>
+                      <p className="text-gray-700 text-sm">{card.description}</p>
+                      <button className="bg-teal-600 text-white rounded-3xl p-2 text-sm self-start">
+                        Learn More
+                      </button>
                     </div>
                   </div>
                 ))}
@@ -187,4 +207,6 @@ export default function Landing() {
       </div>
     </>
   );
-}
+};
+
+export default Landing;
