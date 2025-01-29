@@ -16,7 +16,7 @@ export default function Header() {
         <div className="flex relative items-center max-[991px]:justify-between">
         <h1 className="text-[20px] uppercase font-bold relative icon-logo z-10 max-[991px]:ml-[15px]">Totc</h1>
       <nav
-        className={`justify-between items-center bg-white md:bg-[#00cdb8] ml-auto z-50 gap-[1.5rem] flex 
+        className={`justify-between items-center bg-[#00cdb8] ml-auto z-50 gap-[1.5rem] flex 
           ${
           showIcon
             ? `max-[991px]:absolute max-[991px]:top-[49px] bg-main max-[991px]:w-full max-[991px]:left-0 max-[991px]:flex-col max-[991px]:flex max-[991px]:pt-[25px] max-[991px]:shadow 

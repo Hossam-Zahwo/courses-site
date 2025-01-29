@@ -1,12 +1,12 @@
 import React from "react";
 
-import Landing from "../Components/Landing"
+import HomePage from "../Components/Home"
 
 const Home: React.FC = () => {
   return (
     <div>
     
-      <Landing />
+      <HomePage />
     </div>
   );
 };

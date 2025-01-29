@@ -5,6 +5,7 @@ import Image from "next/image";
 import { MdDateRange, MdEmail } from "react-icons/md";
 import React, { useState } from "react";
 import OurSucc from "./ourSucc";
+import CloudSection from "./CloudSection"
 
 
 type CardData = {
@@ -46,7 +47,7 @@ const Landing: React.FC = () => {
     <>
       {/* Hero Section */}
       <div className="relative w-full overflow-hidden">
-        <div className="relative pt-[50px] bg-[#00cdb8] text-white bg-main flex-col max-[991px]:flex-col gap-10 justify-between items-center overflow-hidden px-5 h-[650px] md:h-[680px] sm:h-[680px] custome-rounded z-10 w-full">
+        <div className="relative pt-[50px] bg-[#00cdb8] text-white bg-main flex-col max-[991px]:flex-col gap-10 justify-between items-center overflow-hidden px-5 lg:h-[650px] md:h-[680px] sm:h-[680px] h-[680px] custome-rounded z-10 w-full">
           {/* Left Section */}
           <div className="w-[50%] max-[991px]:w-full absolute top-[125px] max-[1025px]:top-[50px] max-[1000px]:top-[35px] max-[991px]:static">
             <h1 className="mb-[10px] text-[35px] text-white">
@@ -71,7 +72,7 @@ const Landing: React.FC = () => {
           </div>
 
           {/* Right Section (Image and Overlays) */}
-          <div className="landing-image absolute flex justify-center items-center negative-bottom right-[200px] bottom-60 w-full max-w-[400px] z-10 md:right-auto md:left-[50%] translate-media md:w-[300px] md:bottom-0 sm:right-auto sm:left-[50%] sm:w-[300px] sm:bottom-0">
+          <div className="landing-image absolute flex justify-center items-center negative-bottom min-[991px]:right-[200px] bottom-60 w-full max-w-[400px] z-10  max-[991px]:left-[50%]  translate-media md:w-[300px] md:bottom-0 sm:w-[300px] sm:bottom-0">
             {/* Main Image */}
             <Image
               src="/landing-img.png"
@@ -128,6 +129,7 @@ const Landing: React.FC = () => {
 
         {/* our Succ Section */}
         <OurSucc />
+        <CloudSection />
         {/* News Section */}
         <div className="flex w-full flex-col justify-center items-center  p-5">
           <h1 className="w-full max-w-[478px] text-3xl text-center font-bold text-[#2F327D] mb-4">

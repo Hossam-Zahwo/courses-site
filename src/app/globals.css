@@ -74,3 +74,9 @@ body {
 .negativ-right {
   right: -70px;
 }
+.custome-mt{
+  margin-top: -33px;
+}
+.custome-shadow{
+  box-shadow: 0 10px 15px 10px rgb(0 0 0 / 0.1);
+}
