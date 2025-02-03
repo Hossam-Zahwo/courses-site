@@ -6,6 +6,7 @@ import { MdDateRange, MdEmail } from "react-icons/md";
 import React, { useState } from "react";
 import OurSucc from "./ourSucc";
 import CloudSection from "./CloudSection"
+import About from "./About";
 
 
 type CardData = {
@@ -130,6 +131,7 @@ const Landing: React.FC = () => {
         {/* our Succ Section */}
         <OurSucc />
         <CloudSection />
+        <About />
         {/* News Section */}
         <div className="flex w-full flex-col justify-center items-center  p-5">
           <h1 className="w-full max-w-[478px] text-3xl text-center font-bold text-[#2F327D] mb-4">
